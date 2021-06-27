@@ -1,6 +1,7 @@
 import './App.css';
 import SearchBar from './SearchBar';
 import AddItem from './AddItem';
+import DisplayItem from './DisplayItem';
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
 
@@ -32,6 +33,8 @@ function App() {
       <p>D'Inventory</p>
       <p>{name}</p>
       <AddItem addItem={addItemToData}/>
+
+      <DisplayItem items={data.items} />
       <ButtonState ></ButtonState>
     </div>
   );

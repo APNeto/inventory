@@ -9,7 +9,7 @@ function AddItem(props) {
 
 
     const addItemButtonPressed = () => {
-        props.addItem(name, price, type, brand)
+        props.addItem({name, price, type, brand})
     }
 
     return (

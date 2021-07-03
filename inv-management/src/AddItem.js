@@ -9,22 +9,26 @@ function AddItem(props) {
 
 
     const addItemButtonPressed = () => {
-        props.addItem({name, price, type, brand})
+        props.addItem({ name, price, type, brand })
     }
 
     return (
-        <form>
-            <h2>Item</h2>
-            <label htmlFor='name-field'>Name</label>
-            <input id='name-field' type='text' value={name} onChange={(e) => setName(e.target.value)} />
-            <label htmlFor='price-field'>Quantity</label>
-            <input id='price-field' type='number' value={price} onChange={(e) => setPrice(e.target.value)} />
-            <label htmlFor='type-field'>Type</label>
-            <input id='type-field' type='text' value={type} onChange={(e) => setType(e.target.value)} />
-            <label htmlFor='brand-field'>Brand</label>
-            <input id='brand-field' type='text' value={brand} onChange={(e) => setBrand(e.target.value)} />
-            <button type="button" onClick={addItemButtonPressed}>Add Item</button>
-        </form>
+        <div className='container'>
+            <div className='row'>
+                <h2>Add Item</h2>
+                <label htmlFor='name-field'>Name</label>
+                <input id='name-field' type='text' className='form-control' value={name} onChange={(e) => setName(e.target.value)} />
+                <label htmlFor='price-field'>Quantity</label>
+                <input id='price-field' type='number' className='form-control' value={price} onChange={(e) => setPrice(e.target.value)} />
+                <label htmlFor='type-field'>Type</label>
+                <input id='type-field' type='text' className='form-control' value={type} onChange={(e) => setType(e.target.value)} />
+                <label htmlFor='brand-field'>Brand</label>
+                <input id='brand-field' type='text' className='form-control' value={brand} onChange={(e) => setBrand(e.target.value)} />
+            </div>
+            <div className='row mt-3'>
+                <button type="button" className='btn btn-dark' onClick={addItemButtonPressed}>Add Item</button>
+            </div>
+        </div>
     );
 }
 export default AddItem;

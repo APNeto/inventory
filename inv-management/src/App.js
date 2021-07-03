@@ -12,7 +12,7 @@ function App() {
   const [type, setType] = useState("");
   const [brand, setBrand] = useState("");
 
-  const [data, setData] = useState({ items: []});
+  const [data, setData] = useState({ items: [] });
 
   const updateSearch = (name, number, type, brand) => {
     setName(name);
@@ -24,17 +24,23 @@ function App() {
   const addItemToData = (item) => {
     let currentItems = data['items']
     currentItems.push(item)
-    setData({items: currentItems})
+    setData({ items: currentItems })
     console.log(data)
   }
   return (
-    <div className="App">
-      <SearchBar setFilters={updateSearch} />
+    <div className="container">
+      <div className='row mt-3'>
+        <SearchBar setFilters={updateSearch} />
+      </div>
+      <div className='row mt-3'>
+        <DisplayItem items={data.items} />
+      </div>
+      <div className='row mt-3'>
+        <AddItem addItem={addItemToData} />
+      </div>
       <p>D'Inventory</p>
       <p>{name}</p>
-      <AddItem addItem={addItemToData}/>
 
-      <DisplayItem items={data.items} />
       <ButtonState ></ButtonState>
     </div>
   );
